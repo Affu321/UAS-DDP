@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int bb[5];
+   string nama[5];
+   int i, status, umur[5], bmi, bmin, bmax, bi, t=0;
+   float brtrata,tb[5];
+   
+   cout<<"KALKULATOR BMI:)"<<endl;
+   cout<<"Silahkan input data dibawah ini :"<<endl;
+   
+   for (i=1;i<=2;i++){
+     cout<<"Orang ke-"<<i<<endl;
+     cout<<"Masukkan Nama Anda :" ;
+     cin>>nama[i];
+     cout<<"Masukkan Berat Badan Anda (kg) :";
+     cin>>bb[i];
+     cout<<"Masukkan Tinggi Badan Anda (cm) :";
+     cin>>tb[i];
+     cout<<"Masukkan Usia Anda :";
+     cin>>umur[i];
+     
+   }
+   for (i=1;i<=2;i++){
+    cout<<endl;
+
+   bmi=bb [i]/((tb[i]/100)*(tb[i]/100));
+    cout<<"Body Mass Index / BMI Anda Adalah   :" <<bmi<<endl; 
+    if(bmi<=18.5) {
+         cout<<"Note : Anda Kekurangan Berat Badan"<<endl;
+    }else if(bmi>18.5 & bmi <=25){
+         cout<<" Note : Berat Badan Anda Ideal"<<endl;
+    }else if(bmi>25 & bmi <=3000){
+        cout<<"Note :  Anda Kelebihan Berat Badan"<<endl;
+    }else {
+        cout<<"Note : Anda Mengalami Obesitas"<<endl;
+    }
+    bi=((tb[i]-100)-(tb[i]-100)*0.1);
+    if(bi<0){
+        cout<<"Berat anda melebihi :"<<((tb[i]-100)-(tb[i]-100)*0.1)<<" KG untuk mendapatkan berat ideal"<<endl;
+    }else if(bmi>25 & bmi <=3000){
+    cout<<"Berat anda kurang dari :"<<bi<<" KG untuk mendapatkan berat ideal"<<endl;
+   }
+   }
+}
